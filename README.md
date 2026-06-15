@@ -2,6 +2,12 @@
 
 API desenvolvida em Node.js com Express e MySQL para cadastro e gerenciamento de alunos.
 
+## Sobre o Projeto
+
+Projeto desenvolvido como atividade acadêmica da graduação em Análise e Desenvolvimento de Sistemas.
+
+O objetivo foi criar uma API REST capaz de receber dados de alunos, validar informações, calcular resultados acadêmicos e armazenar os dados em banco MySQL.
+
 ## Tecnologias
 
 - Node.js
@@ -20,18 +26,28 @@ API desenvolvida em Node.js com Express e MySQL para cadastro e gerenciamento de
 - Atualização de dados
 - Exclusão de registros
 
-## Rotas
+
 
 ### POST /alunos
 
-Cadastrar aluno
+![POST](<p align="left">
+  <img src="screenshots/post-cadastro.png" width="220">
+  </p>)
 
-Exemplo:
 
-```json
-{
-  "nome": "João",
-  "email": "joao@email.com",
-  "nota1": 5,
-  "nota2": 3
-}
+### GET /alunos
+
+![TABELA](<p align="left">
+  <img src="screenshots/get-alunos-cadastrados.png" width="220">
+  </p>)
+
+
+## Autor
+
+Guilherme Bomfim Ribeiro
+
+GitHub:
+https://github.com/GuiH666
+
+LinkedIn:
+https://www.linkedin.com/in/guilherme-bomfim-ribeiro-2623aa218/
