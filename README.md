@@ -39,7 +39,7 @@ CREATE TABLE alunos (
   notaFinal INT,
   status VARCHAR(20)
 );
-
+```
 
 
 ### POST /alunos
