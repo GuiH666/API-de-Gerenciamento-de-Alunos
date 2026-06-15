@@ -27,6 +27,20 @@ O objetivo foi criar uma API REST capaz de receber dados de alunos, validar info
 - Exclusão de registros
 
 
+## Estrutura da Tabela
+
+```sql
+CREATE TABLE alunos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(100),
+  email VARCHAR(100),
+  nota1 INT,
+  nota2 INT,
+  notaFinal INT,
+  status VARCHAR(20)
+);
+
+
 
 ### POST /alunos
 
