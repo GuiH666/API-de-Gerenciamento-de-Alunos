@@ -1,6 +1,22 @@
+require('dotenv').config();
 let express = require('express');
 let app = express();
 app.use(express.json());
+
+// CORS: sem isto o navegador bloqueia as chamadas do front-end (que roda em outra porta).
+// A origem permitida vem do .env (CORS_ORIGIN); por padrão, o servidor de desenvolvimento do Vite.
+const ORIGEM_PERMITIDA = process.env.CORS_ORIGIN || 'http://localhost:5173';
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', ORIGEM_PERMITIDA);
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+    // O navegador faz uma "pergunta prévia" (OPTIONS) antes de um POST com JSON.
+    if (req.method === 'OPTIONS') return res.sendStatus(204);
+
+    next();
+});
 
 const PORT = 3000;
 const db = require('./db');

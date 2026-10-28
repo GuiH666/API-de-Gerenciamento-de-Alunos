@@ -71,7 +71,7 @@ CREATE TABLE alunos (
 
 1. Crie o banco `escola` no MySQL e a tabela acima.
 2. Instale as dependências: `npm install`
-3. Copie `.env.example` para `.env` e preencha com os dados do seu MySQL.
+3. Copie `.env.example` para `.env` e preencha com os dados do seu MySQL. O `CORS_ORIGIN` já vem com o endereço do front-end em desenvolvimento (`http://localhost:5173`).
 4. Inicie o servidor: `npm run dev` (ou `node index.js`). A API sobe em `http://localhost:3000`.
 
 ## Testes no Postman
