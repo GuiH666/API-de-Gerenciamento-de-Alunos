@@ -91,7 +91,8 @@ CREATE TABLE alunos (
 
 ## Autor
 
-**Guilherme Bomfim Ribeiro**
+**Guilherme Bomfim Ribeiro**  
+
 
 - GitHub: https://github.com/GuiH666
 - LinkedIn: https://www.linkedin.com/in/guilherme-bomfim-ribeiro-2623aa218/
