@@ -2,7 +2,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const { criarApp } = require('../src/app');
 
-// Banco falso: guarda os alunos em memória e imita a interface db.query(sql, params, callback).
+// Banco falso (o SQL do app começa com quebra de linha, por isso o trim): guarda os alunos em memória e imita a interface db.query(sql, params, callback).
 function bancoFalso({ falhar = false } = {}) {
     const alunos = [];
     return {
@@ -10,7 +10,7 @@ function bancoFalso({ falhar = false } = {}) {
         query(sql, params, callback) {
             if (typeof params === 'function') { callback = params; params = []; }
             if (falhar) return callback(new Error('segredo: senha do banco'));
-            if (sql.startsWith('INSERT')) {
+            if (sql.trim().startsWith('INSERT')) {
                 const [nome, email, nota1, nota2, notaFinal, status] = params;
                 alunos.push({ id: alunos.length + 1, nome, email, nota1, nota2, notaFinal, status });
                 return callback(null, { insertId: alunos.length });
