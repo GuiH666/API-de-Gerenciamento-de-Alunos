@@ -1,19 +1,25 @@
 {
-  "name": "tasii",
+  "name": "api-gerenciamento-alunos",
   "version": "1.0.0",
-  "description": "",
-  "license": "ISC",
-  "author": "Guilherme",
+  "description": "API REST em Node.js, Express e MySQL para cadastro de alunos com validação e cálculo de resultado.",
+  "license": "MIT",
+  "author": "Guilherme Bomfim Ribeiro",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "node --test"
   },
   "dependencies": {
     "dotenv": "^18.0.9",
     "express": "^5.2.1",
-    "mysql2": "^3.22.1",
+    "mysql2": "^3.22.1"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
     "nodemon": "^3.1.14"
   }
 }
