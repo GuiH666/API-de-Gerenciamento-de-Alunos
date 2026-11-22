@@ -37,6 +37,11 @@ function validarAluno(corpo) {
     if (!Number.isFinite(nota1) || !Number.isFinite(nota2)) {
         return { ok: false, erro: 'Notas devem ser números' };
     }
+    // As colunas nota1/nota2 são INT: um 7.5 seria arredondado em silêncio pelo MySQL e a
+    // nota final calculada aqui não bateria com a gravada. O front-end (Boletim) já exige inteiros.
+    if (!Number.isInteger(nota1) || !Number.isInteger(nota2)) {
+        return { ok: false, erro: 'Notas devem ser números inteiros' };
+    }
     if (nota1 < NOTA_MINIMA || nota1 > NOTA_MAXIMA || nota2 < NOTA_MINIMA || nota2 > NOTA_MAXIMA) {
         return { ok: false, erro: 'Notas devem estar entre 0 e 10' };
     }

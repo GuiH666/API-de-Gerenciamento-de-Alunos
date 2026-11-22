@@ -32,8 +32,12 @@ test('recusa nota que não é número (inclusive NaN e texto)', () => {
 
 test('recusa nota fora de 0 a 10 e aceita os limites', () => {
     assert.equal(validarAluno({ ...valido, nota1: -1 }).erro, 'Notas devem estar entre 0 e 10');
-    assert.equal(validarAluno({ ...valido, nota2: 10.5 }).erro, 'Notas devem estar entre 0 e 10');
+    assert.equal(validarAluno({ ...valido, nota2: 11 }).erro, 'Notas devem estar entre 0 e 10');
     assert.equal(validarAluno({ ...valido, nota1: 0, nota2: 10 }).ok, true);
+});
+
+test('recusa nota decimal, porque a coluna do banco é INT', () => {
+    assert.equal(validarAluno({ ...valido, nota1: 7.5 }).erro, 'Notas devem ser números inteiros');
 });
 
 test('corpo vazio ou ausente não derruba a validação', () => {

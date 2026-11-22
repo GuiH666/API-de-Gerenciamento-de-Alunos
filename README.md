@@ -51,7 +51,7 @@ Resposta (201):
 ## Regras de negócio
 
 - Nome, e-mail, `nota1` e `nota2` são obrigatórios.
-- As notas devem ser números entre 0 e 10.
+- As notas devem ser números **inteiros** entre 0 e 10 (as colunas do banco são `INT`).
 - A nota final é a soma das duas notas.
 - Status **Aprovado** quando a nota final é 7 ou mais; caso contrário, **Reprovado**.
 
